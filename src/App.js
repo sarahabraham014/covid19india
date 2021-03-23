@@ -2,9 +2,9 @@ import React , {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Header';
 import India from './Components/India';
-import PieChart from './Components/piechart';
-import BarChart from './Components/barchart';
-import LineChart from './Components/linechart';
+import PieChart from './Components/PieChart';
+import BarChart from './Components/BarChart';
+import LineChart from './Components/LineChart';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 class App extends Component{
