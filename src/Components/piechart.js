@@ -13,6 +13,7 @@ class PieChart extends Component {
             data : {}
         }
     }
+  //hello
 
     componentDidMount(){
 
