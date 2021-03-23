@@ -26,7 +26,7 @@ class India extends Component{
                 <div className="col-md-12">
         
 
-                    <div className="row">
+                    <div className="row my-4">
 
                         <div className="col-md-3">
                         

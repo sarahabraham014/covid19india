@@ -1,11 +1,11 @@
-import React , {Component} from 'react'
-import { Pie, defaults } from 'react-chartjs-2'
+import React,{Component} from 'react'
+import { Bar, defaults } from 'react-chartjs-2'
 import Axios from 'axios';
 
 defaults.global.tooltips.enabled = false
 defaults.global.legend.position = 'bottom'
 
-class PieChart extends Component {
+class BarChart extends Component {
 
     constructor(){
         super()
@@ -22,36 +22,39 @@ class PieChart extends Component {
     }
 
 
-render(){
+
+
+ render(){
   return (
-    <div className="mt-10">
-      <Pie
+    <div className = "mt-6 d-flex align-items-center justify-content-center text-center ">
+      <Bar
         data={{
-          labels: [ 'Cases','Recovered', 'Active', 'Deaths'],
+          labels: ['Cases', 'Recovered', 'Active', 'Deaths'],
           datasets: [
             {
-              label: 'No of Cases',
+              label: 'Cases' ,
               data: [this.state.data.cases,this.state.data.recovered,this.state.data.active,this.state.data.deaths],
               backgroundColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(30, 100, 100, 1)',
-                
+               
               ],
               borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
+                
               ],
               borderWidth: 1,
             },
-           
+            
           ],
         }}
         height={400}
-        width={600}
+        width={200}
         options={{
           maintainAspectRatio: false,
           scales: {
@@ -75,4 +78,4 @@ render(){
 }
 }
 
-export default PieChart;
+export default BarChart

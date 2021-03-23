@@ -32,30 +32,30 @@ class Statedata extends Component{
                     {
                         keys.map((itm,ky) =>{
 
-                            //let districts = this.state.stateData[itm].districtData;
-                            
+                            let districts = this.state.stateData[itm].districtData;
+                          //  let district_keys = Object.keys(districts);
 
-                            // let total_active = 0;
-                            // let total_deaths = 0;
-                            // let total_confirmed = 0;
-                            // let total_recover = 0;
+                          //  let total_active = 0;
+                           // let total_deaths = 0;
+                           // let total_confirmed = 0;
+                           // let total_recover = 0;
                             
                             let district_list = [];
 
-                            // for( let x in districts) {
-                            //     total_active += districts[x].active;
-                            //     total_confirmed += districts[x].confirmed;
-                            //     total_deaths += districts[x].deceased;
-                            //     total_recover += districts[x].recovered;
-                            //     let ob = districts[x];
-                            //     ob["district_name"] = x;
-                            //     district_list.push(ob);
-                            // }
+                            for( let x in districts) {
+                           //     total_active += districts[x].active;
+                           //     total_confirmed += districts[x].confirmed;
+                           //     total_deaths += districts[x].deceased;
+                           //     total_recover += districts[x].recovered;
+                                let ob = districts[x];
+                               ob["district_name"] = x;
+                               district_list.push(ob);
+                            }
 
                          return(
                             <Card>
                             <Card.Header>
-                              <Accordion.Toggle as={Button} variant="link" eventKey={ky}>
+                              <Accordion.Toggle as={Button} variant="" eventKey={ky}>
                                 {itm}
                               </Accordion.Toggle>
                             </Card.Header>

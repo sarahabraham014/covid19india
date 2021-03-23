@@ -1,11 +1,11 @@
 import React , {Component} from 'react'
-import { Pie, defaults } from 'react-chartjs-2'
+import { Line , defaults } from 'react-chartjs-2'
 import Axios from 'axios';
 
 defaults.global.tooltips.enabled = false
 defaults.global.legend.position = 'bottom'
 
-class PieChart extends Component {
+class LineChart extends Component {
 
     constructor(){
         super()
@@ -22,10 +22,13 @@ class PieChart extends Component {
     }
 
 
+
+
 render(){
   return (
-    <div className="mt-10">
-      <Pie
+    <div className="mt-6">
+    
+      <Line
         data={{
           labels: [ 'Cases','Recovered', 'Active', 'Deaths'],
           datasets: [
@@ -36,7 +39,7 @@ render(){
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
-                'rgba(30, 100, 100, 1)',
+                'rgba(75, 100, 100, 1)',
                 
               ],
               borderColor: [
@@ -75,4 +78,4 @@ render(){
 }
 }
 
-export default PieChart;
+export default LineChart;
