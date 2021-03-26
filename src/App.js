@@ -5,7 +5,9 @@ import India from './Components/India';
 import PieChart from './Components/piechart';
 import BarChart from './Components/BarChart';
 import LineChart from './Components/LineChart';
+import Statedropdown from './Components/dropdownstate';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 class App extends Component{
   
@@ -19,7 +21,12 @@ class App extends Component{
       <div className=" ">
       <Header/>
       </div>
+
+      <div className=" ">
+      <Statedropdown/>
+      </div>
        
+      
        
          <Switch>
            <Route exact path="/">
