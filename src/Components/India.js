@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import {Card} from 'react-bootstrap';
-import Statedata from './Statedata';
+
 import Axios from 'axios';
 
 class India extends Component{
@@ -81,9 +81,7 @@ class India extends Component{
 
                 </div>
 
-                <div className="col-md-12">
-                 <Statedata/>
-                </div>
+                
 
                </div>
            

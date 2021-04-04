@@ -10,23 +10,7 @@ class Header extends Component {
             <Navbar.Brand href="#home">COVID-19 INDIA</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-             <Nav className="mr-auto">
-             
-             
-               <Link className="nav-link" to ="/india">Statewise details</Link>
-                
-               <Link className="nav-link" to ="/piechart">Pie Chart  </Link>
-                
-                 
-                 
-                 <Link className="nav-link" to="/barchart">Bar Chart  </Link>
-                 
-                 <Link className="nav-link" to="/linechart">Line Chart</Link>
-               
-             
               
-              
-             </Nav>    
             </Navbar.Collapse>
             </Navbar>
             
