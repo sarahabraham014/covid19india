@@ -5,6 +5,7 @@ import Axios from 'axios'
 let Dropdownstate = (props) => {
     let [stateData, setStateData] = useState(null)
     useEffect(() => {
+        
         Axios.get("https://api.covid19india.org/state_district_wise.json").then(response => {
             setStateData(response.data);
 
