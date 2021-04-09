@@ -113,8 +113,10 @@ let Dropdownstate1 = () =>{
                     <p>Deaths : {totalDeathsCases}</p>
                 </div>
             }
-           
-           <div className = "mt-6 d-flex align-items-center justify-content-center text-center ">
+
+            
+  <div class="d-flex"> 
+      <div className = "mt-6 d-flex pd-4 align-items-center justify-content-center text-center ">
       <Bar
         data={{
           labels: ['Cases', 'Recovered', 'Active', 'Deaths'],
@@ -259,7 +261,8 @@ let Dropdownstate1 = () =>{
         }}
       />
     </div>
-
+    
+</div>
 
         </>
     )
