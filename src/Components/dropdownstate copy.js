@@ -91,9 +91,9 @@ let Dropdownstate1 = () =>{
             <Navbar.Brand href="#home">COVID-19 INDIA</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              
+            <Nav>
             <div>
-                <label for="state">Choose a state</label>
+                <label for="state"></label>
                 <select 
                     name="state" 
                     onChange={(e)=>{
@@ -112,6 +112,8 @@ let Dropdownstate1 = () =>{
                     }
                 </select>
             </div>
+            </Nav>  
+            
 
             </Navbar.Collapse>
             </Navbar>
@@ -218,7 +220,7 @@ let Dropdownstate1 = () =>{
         height={400}
         width={500}
         options={{
-          responsive: true,
+          
           maintainAspectRatio: false,
           scales: {
             yAxes: [
@@ -231,7 +233,7 @@ let Dropdownstate1 = () =>{
           },
           legend: {
             labels: {
-              fontSize: 25,
+              fontSize: 12,
             },
           },
         }}
@@ -268,7 +270,7 @@ let Dropdownstate1 = () =>{
       height={400}
       width={600}
       options={{
-        responsive: true,
+        
         maintainAspectRatio: false,
         scales: {
           yAxes: [
@@ -281,7 +283,7 @@ let Dropdownstate1 = () =>{
         },
         legend: {
           labels: {
-            fontSize: 25,
+            fontSize: 12,
           },
         },
       }}
@@ -315,9 +317,9 @@ let Dropdownstate1 = () =>{
           ],
         }}
         height={400}
-        width={600}
+        width={400}
         options={{
-          responsive: true,
+         
           maintainAspectRatio: false,
           scales: {
             yAxes: [
@@ -330,7 +332,7 @@ let Dropdownstate1 = () =>{
           },
           legend: {
             labels: {
-              fontSize: 25,
+              fontSize: 12,
             },
           },
         }}
