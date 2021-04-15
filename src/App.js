@@ -14,13 +14,7 @@ class App extends Component{
      
       <div className="container-fluid ">
       
-      <div className=" ">
-      <Header/>
-      </div>
       
-      <div className=" ">
-      <India/>
-      </div>
 
       <div>
       <Dropdownstate1 />

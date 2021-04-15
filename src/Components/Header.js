@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import {Nav,Navbar} from 'react-bootstrap';
-import {  Link } from 'react-router-dom';
+
 
 class Header extends Component {
     render() {
@@ -13,10 +13,6 @@ class Header extends Component {
               
             </Navbar.Collapse>
             </Navbar>
-            
-
-
-
         )
     }
 }

@@ -3,6 +3,8 @@ import Axios from 'axios'
 import { Bar, defaults } from 'react-chartjs-2'
 import { Line  } from 'react-chartjs-2'
 import { Pie } from 'react-chartjs-2'
+import {Nav,Navbar} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 
 let Dropdownstate1 = () =>{
     let [stateData,setStateData]=useState(null)
@@ -85,6 +87,11 @@ let Dropdownstate1 = () =>{
     
     return (
         <>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="#home">COVID-19 INDIA</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              
             <div>
                 <label for="state">Choose a state</label>
                 <select 
@@ -105,13 +112,78 @@ let Dropdownstate1 = () =>{
                     }
                 </select>
             </div>
+
+            </Navbar.Collapse>
+            </Navbar>
+           
+            
+
+
+
             {
-              totalActiveCases &&  <div>
-                    <p>Confirmed : {totalConfirmedCases}</p>
-                    <p>Active : {totalActiveCases}</p>
-                    <p>Recovered : {totalRecoveredCases}</p>
-                    <p>Deaths : {totalDeathsCases}</p>
-                </div>
+              totalActiveCases &&  <div className="row">
+                
+              <div className="col-md-12">
+      
+
+                  <div className="row my-4">
+
+                      <div className="col-md-3">
+                      
+                      <Card className="badge badge-info" style={{ width: '18rem' }}>
+                      <Card.Body className="text-center">
+                      <Card.Title>TOTAL CASES</Card.Title>
+                      <h3>{totalConfirmedCases}</h3>
+                      <Card.Text>
+                        
+                      </Card.Text>
+                      </Card.Body>
+                      </Card>
+                      </div>
+
+                      <div className="col-md-3">
+                      <Card className="badge badge-info" style={{ width: '18rem' }}>
+                      <Card.Body className="text-center">
+                      <Card.Title>ACTIVE</Card.Title>
+                      <h3>{totalActiveCases}</h3>
+                      <Card.Text>
+                        
+                      </Card.Text>
+                      </Card.Body>
+                      </Card>
+                      </div>
+
+                      <div className="col-md-3">
+                      <Card className="badge badge-info" style={{ width: '18rem' }}>
+                      <Card.Body className="text-center">
+                      <Card.Title>RECOVERED</Card.Title>
+                      <h3>{totalRecoveredCases}</h3>
+                      <Card.Text>
+                        
+                      </Card.Text>
+                      </Card.Body>
+                      </Card>
+                      </div>
+
+                      <div className="col-md-3">
+                      <Card className="badge badge-info" style={{ width: '18rem' }}>
+                      <Card.Body className="text-center">
+                      <Card.Title>DEATHS</Card.Title>
+                      <h3>{totalDeathsCases}</h3>
+                      <Card.Text>
+                      </Card.Text>
+                      </Card.Body>
+                      </Card>
+                      </div>
+                      
+                      
+                  </div>
+
+              </div>
+
+              
+
+             </div>
             }
 
             
@@ -144,8 +216,9 @@ let Dropdownstate1 = () =>{
           ],
         }}
         height={400}
-        width={200}
+        width={500}
         options={{
+          responsive: true,
           maintainAspectRatio: false,
           scales: {
             yAxes: [
@@ -195,6 +268,7 @@ let Dropdownstate1 = () =>{
       height={400}
       width={600}
       options={{
+        responsive: true,
         maintainAspectRatio: false,
         scales: {
           yAxes: [
@@ -243,6 +317,7 @@ let Dropdownstate1 = () =>{
         height={400}
         width={600}
         options={{
+          responsive: true,
           maintainAspectRatio: false,
           scales: {
             yAxes: [
