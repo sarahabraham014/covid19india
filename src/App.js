@@ -1,7 +1,5 @@
 import React , {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Components/Header';
-import India from './Components/India';
 import Dropdownstate1 from './Components/dropdownstate copy';
 
 

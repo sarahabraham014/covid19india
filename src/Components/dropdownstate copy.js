@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
-import { Bar, defaults } from 'react-chartjs-2'
+import { Bar} from 'react-chartjs-2'
 import { Line  } from 'react-chartjs-2'
 import { Pie } from 'react-chartjs-2'
 import {Nav,Navbar} from 'react-bootstrap';
@@ -14,14 +14,18 @@ let Dropdownstate1 = () =>{
     let [totalConfirmedCases,setTotalConfirmedCases]=useState(0)
     let [totalDeathsCases,setTotalDeathsCases]=useState(0)
 
-    let dataselected;
+    
     useEffect(()=>{
         Axios.get("https://api.covid19india.org/state_district_wise.json").then(response => {
             setStateData(response.data);
-            dataselected=response.data.Assam.districtData
+            
         });
     },[])
     useEffect(()=>{
+
+
+
+
         if(selectedState){
             // selectedState.forEach(district => {
             //     console.log(district)
@@ -87,13 +91,15 @@ let Dropdownstate1 = () =>{
     
     return (
         <>
+           
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#home">COVID-19 INDIA</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav>
-            <div>
-                <label for="state"></label>
+            
+            <Nav className ="mr-auto">
+            </Nav>  
+                <label for="state" ></label>
                 <select 
                     name="state" 
                     onChange={(e)=>{
@@ -111,8 +117,8 @@ let Dropdownstate1 = () =>{
                         })
                     }
                 </select>
-            </div>
-            </Nav>  
+            
+              
             
 
             </Navbar.Collapse>
@@ -123,7 +129,7 @@ let Dropdownstate1 = () =>{
 
 
             {
-              totalActiveCases &&  <div className="row">
+               <div className="row">
                 
               <div className="col-md-12">
       
