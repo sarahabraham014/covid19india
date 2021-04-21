@@ -6,6 +6,7 @@ import { Pie } from 'react-chartjs-2'
 import {Nav,Navbar} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 
+
 let Dropdownstate1 = () =>{
     let [stateData,setStateData]=useState(null)
     let [selectedState,setSelectedState]=useState(null)
@@ -18,13 +19,28 @@ let Dropdownstate1 = () =>{
     useEffect(()=>{
         Axios.get("https://api.covid19india.org/state_district_wise.json").then(response => {
             setStateData(response.data);
+
             
-        });
+          });
+             
     },[])
+
     useEffect(()=>{
+     if(stateData && stateData["State Unassigned"])
+     {
+      setSelectedState(stateData["State Unassigned"].districtData)
+
+     } // setSelectedState(stateData["State Unassigned"]?.districtData) 
+        
+      
+  },[stateData])
 
 
 
+
+
+
+    useEffect(()=>{
 
         if(selectedState){
             // selectedState.forEach(district => {
@@ -65,7 +81,7 @@ let Dropdownstate1 = () =>{
               setTotalRecoveredCases(0)
               setTotalConfirmedCases(0)
               setTotalDeathsCases(0)
-              console.log(totalActiveCases);
+              
               let activeCases = 0;
               let recoveredCases = 0;
               let confirmedCases = 0;
@@ -83,9 +99,10 @@ let Dropdownstate1 = () =>{
               setTotalConfirmedCases(confirmedCases)
               setTotalDeathsCases(deceasedCases)
             }
-            console.log(selectedState);
+            
         }
     },[selectedState])
+
     let keys = stateData && Object.keys(stateData);
 
     
@@ -100,8 +117,9 @@ let Dropdownstate1 = () =>{
             <Nav className ="mr-auto">
             </Nav>  
                 <label for="state" ></label>
-                <select 
+               { keys && keys[0] && <select 
                     name="state" 
+                    defaultValue={keys && keys[0]}
                     onChange={(e)=>{
                         setSelectedState(stateData[e.target.value].districtData)
                         
@@ -117,6 +135,7 @@ let Dropdownstate1 = () =>{
                         })
                     }
                 </select>
+                    }
             
               
             
